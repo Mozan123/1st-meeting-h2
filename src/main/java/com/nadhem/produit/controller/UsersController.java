@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.nadhem.produit.model.Users;
@@ -45,5 +46,11 @@ public class UsersController {
 	@GetMapping("home")
 	public String home() {
 		return "Hello Mozan";
+	}
+	
+	
+	@GetMapping()
+	public Users findBySel(@RequestParam int sal) {
+		return userJpaRespository.findBySalary(sal);
 	}
 }
