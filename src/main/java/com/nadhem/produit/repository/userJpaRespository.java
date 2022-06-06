@@ -1,15 +1,15 @@
 package com.nadhem.produit.repository;
 
-import java.util.List;
-
 import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Repository;
 
 import com.nadhem.produit.model.Users;
 
-@Component
+@Repository
 public interface userJpaRespository extends JpaRepository<Users,Long>{
 
 	Users findByName(String name);
+	
+	Users findBySalary(int sal);
 
 }
